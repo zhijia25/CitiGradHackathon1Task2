@@ -1,6 +1,8 @@
 import time
 import urllib3
 
+import WebListener.send()
+
 
 def send():
     pass
