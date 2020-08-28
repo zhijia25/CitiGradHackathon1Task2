@@ -8,7 +8,7 @@ from email.utils import formataddr
 
 def sendEmail(websiteName):
     my_sender = '1622898550@qq.com'  # Sender's email account
-    my_pass = 'ldxhanniriayebga'  # Sender's mailbox password
+    my_pass = 'xxxxxxxxxxxxxxxxxx'  # Sender's mailbox password
     ret = True
     try:
         clientList = []
