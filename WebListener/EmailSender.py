@@ -8,8 +8,8 @@ from email.utils import formataddr
 
 
 def send_notification(website_name):
-    _my_sender = '1622898550@qq.com'  # Sender's email account
-    _my_pass = 'ldxhanniriayebga'  # Sender's mailbox password
+    _my_sender = 'xxxxx@example.com'  # Sender's email account
+    _my_pass = 'xxxxxxxx'  # Sender's mailbox password
     email_status = True
     try:
         clientList = []

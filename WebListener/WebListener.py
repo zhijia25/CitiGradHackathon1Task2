@@ -11,14 +11,18 @@ def send():
 def check_availability(check_list):
     http = urllib3.PoolManager()
     for address in check_list:
-        r = http.request('GET', address)
-        if r.status == 500:
+        try:
+            r = http.request('GET', address)
+            if r.status == 500:
+                es.send_notification(address)
+                print("server is down, sending notification")
+        except urllib3.exceptions.MaxRetryError:
             es.send_notification(address)
             print("server is down, sending notification")
 
 
-def timer_start(interval=5, timeout=10, check_list=[]):
-    """every 5s checking, 10s"""
+def timer_start(interval=3, timeout=10, check_list=[]):
+    """every 3s checking, 10s"""
     n = 1
     start_time = None
     if start_time is None:
@@ -34,6 +38,7 @@ def timer_start(interval=5, timeout=10, check_list=[]):
 
 
 if __name__ == '__main__':
-    address_list = ['http://www.httpbin.org/get']
+    # fill target websites here
+    address_list = ['172.20.10.7:8080/hello_world']
     print("web listener is running!")
     timer_start(check_list=address_list)

@@ -11,4 +11,4 @@ def hello_world():
 
 
 if __name__ == '__main__':
-    app.run("localhost", "8080", debug=True)
+    app.run("172.20.10.7", "8080", debug=True)
