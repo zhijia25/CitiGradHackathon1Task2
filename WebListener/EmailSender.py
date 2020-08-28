@@ -13,7 +13,7 @@ def send_notification(website_name):
     email_status = True
     try:
         clientList = []
-        with open('clientList.csv', 'r') as csvFile:
+        with open('NotificationList.csv', 'r') as csvFile:
             reader = csv.reader(csvFile)
             for line in reader:
                 clientList.append(line)
