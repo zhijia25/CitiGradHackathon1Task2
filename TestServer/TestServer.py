@@ -4,7 +4,7 @@ from flask import Flask
 app = Flask(__name__, static_url_path="")
 
 
-@app.route('/')
+@app.route('/hello_world')
 def hello_world():
     print("received request")
     return 'Hello, World!'
